@@ -27,9 +27,10 @@ const superEventHandler = {
     inner.style.color = colors[3];
   },
   resized: function (e) {
-    console.log(e.target.querySelector("body h2"));
-    const inner = e.target.querySelector("body h2");
-    inner.innerHTML = "You just resized";
+    const target = e.target;
+    const targetBody = target.self.document.body;
+    const inner = targetBody.querySelector("h2");
+    inner.innerHTML = "You just resized!";
     inner.style.color = colors[4];
   }
 };
